@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <meta property="author" content="{{ site.data.me.name }} {{ site.data.me.lastname }}"/>
+    <meta property="og:title" content="{{ page.title }}"/>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="{{ page.type }}"/>
+    <meta property="og:url" content="{{ page.url | absolute_url }}"/>
+    {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}"/>
+    {% endif %}
+    {% if page.image_preview %}
+    <meta property="og:image" content="{{ page.image_preview }}"/>
+    {% endif %}
+
+    <link rel="stylesheet" href="/assets/css/styles.css"/>
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="is-preload">
+<div id="wrapper" class="divided">
+
+    {{ content }}
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
