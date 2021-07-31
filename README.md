@@ -1,2 +1,3 @@
-# travels
-Travel blog for azarakovskiy.com
+# Travel blog for azarakovskiy.com
+
+Soon to be here...
