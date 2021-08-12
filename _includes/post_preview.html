@@ -1,0 +1,23 @@
+{% capture content %}
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.excerpt }}</p>
+<!--    <p>{{ post.tags | join: "," }}</p>-->
+<!--    <p>{{ post.categories | join: ", " }}</p>-->
+    <ul class="actions stacked">
+        <li><a href="{{ post.url }}" class="button">More...</a></li>
+    </ul>
+{% endcapture %}
+
+{% include base/spotlight.html
+    style=post.preview.style
+    image-on=post.preview.image-on
+    content-align=post.preview.content-align
+    image-align=post.preview.image-align
+    height=post.preview.height
+    image=post.preview.image
+    image_alt=post.preview.image_alt
+    bgcolor=post.preview.bgcolor
+    modifiers="onload-image-fade-in onscroll-image-fade-in"
+    extra_modifiers=post.preview.modifiers
+    content=content
+%}
