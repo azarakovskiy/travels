@@ -1,0 +1,10 @@
+{% case include.image-align %}
+    {% when "left" %}
+        {% assign image-align = "image-position-left" %}
+    {% when "center" %}
+        {% assign image-align = "image-position-center" %}
+    {% when "right" %}
+        {% assign image-align = "image-position-right" %}
+    {% else %}
+        {% assign image-align = "image-position-left" %}
+{% endcase %}

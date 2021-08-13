@@ -1,4 +1,5 @@
 url: "https://azarakovskiy.com"
+baseurl: "/travels"
 defaults:
   - scope:
       path: ""

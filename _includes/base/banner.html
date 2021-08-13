@@ -1,25 +1,16 @@
 {% case include.style %}
-    {% when "square" %}
+    {% when "half" %}
         {% assign styleN = 1 %}
-    {% when "circle" %}
+    {% when "boxed" %}
         {% assign styleN = 2 %}
-    {% when "phone" %}
+    {% when "circle" %}
         {% assign styleN = 3 %}
-    {% when "full" %}
+    {% when "phone" %}
         {% assign styleN = 4 %}
-    {% when "full-padding" %}
+    {% when "full" %}
         {% assign styleN = 5 %}
     {% else %}
         {% assign styleN = 1 %}
-{% endcase %}
-
-{% case include.height %}
-    {% when "full" %}
-        {% assign height = "fullscreen" %}
-    {% when "half" %}
-        {% assign height = "halfscreen" %}
-    {% else %}
-        {% assign height = "half" %}
 {% endcase %}
 
 {% include base/vars/bgcolor.html %}
@@ -30,11 +21,11 @@
 
 {% include base/vars/image-on.html %}
 
-<section class="spotlight style{{ styleN }}
+<section class="banner style{{ styleN }}
+    fullscreen
     {{ image-on }}
     {{ content-align }}
     {{ image-align }}
-    {{ height }}
     {{ bgcolor }}
     {{ include.modifiers }}
     {{ include.extra_modifiers }}">

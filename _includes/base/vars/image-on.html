@@ -1,0 +1,8 @@
+{% case include.image-on %}
+    {% when "left" %}
+        {% assign image-on = "orient-right" %}
+    {% when "right" %}
+        {% assign image-on = "orient-left" %}
+    {% else %}
+        {% assign image-on = "orient-left" %}
+{% endcase %}

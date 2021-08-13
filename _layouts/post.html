@@ -1,0 +1,16 @@
+---
+layout: index
+---
+
+{% assign image_url = page.image | relative_url %}
+
+{% include base/banner.html
+    style = "full"
+    bgcolor = page.preview.bgcolor
+    modifiers = "onload-image-fade-in onscroll-image-fade-in"
+    image = image_url
+    image_alt = page.image_alt
+    content = page.excerpt
+%}
+
+{{ content | markdownify }}

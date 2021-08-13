@@ -1,0 +1,10 @@
+{% case include.content-align %}
+    {% when "left" %}
+        {% assign content-align = "content-align-left" %}
+    {% when "center" %}
+        {% assign content-align = "content-align-center" %}
+    {% when "right" %}
+        {% assign content-align = "content-align-right" %}
+    {% else %}
+        {% assign content-align = "content-align-left" %}
+{% endcase %}
