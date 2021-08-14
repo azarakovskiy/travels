@@ -8,7 +8,11 @@
     </ul>
 {% endcapture %}
 
-{% assign image_url = post.image | relative_url %}
+{% include base/vars/image-url.html
+  folders = post.categories
+  image = post.image
+%}
+
 {% include base/spotlight.html
     style=post.preview.style
     image-on=post.preview.image-on
@@ -18,7 +22,6 @@
     image=image_url
     image_alt=post.image_alt
     bgcolor=post.preview.bgcolor
-    modifiers="onload-image-fade-in onscroll-image-fade-in"
     extra_modifiers=post.preview.modifiers
     content=content
 %}

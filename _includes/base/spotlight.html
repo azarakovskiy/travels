@@ -30,13 +30,15 @@
 
 {% include base/vars/image-on.html %}
 
+{% include base/vars/modifiers.html %}
+
 <section class="spotlight style{{ styleN }}
     {{ image-on }}
     {{ content-align }}
     {{ image-align }}
     {{ height }}
     {{ bgcolor }}
-    {{ include.modifiers }}
+    {{ modifiers }}
     {{ include.extra_modifiers }}">
     <div class="content">
         {{ include.content }}

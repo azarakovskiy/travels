@@ -1,0 +1,9 @@
+{% assign image_url =
+  include.folders |
+  join: "/" |
+  prepend: "/" |
+  append: "/" |
+  downcase |
+  append: include.image |
+  relative_url
+%}

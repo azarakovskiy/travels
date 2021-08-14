@@ -2,7 +2,10 @@
 layout: index
 ---
 
-{% assign image_url = page.image | relative_url %}
+{% include base/vars/image-url.html
+  folders = page.categories
+  image = page.image
+%}
 
 {% include base/banner.html
     style = "full"
