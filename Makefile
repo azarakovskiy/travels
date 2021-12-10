@@ -1,3 +1,6 @@
+clean:
+	bundle exec jekyll clean
+
 dev:
 	bundle exec jekyll serve --livereload --drafts
 
