@@ -8,12 +8,30 @@ layout: index
 %}
 
 {% include base/banner.html
-    style = "full"
+    style = page.preview.banner.style
+    height = page.preview.banner.height
     bgcolor = page.preview.bgcolor
-    modifiers = "onload-image-fade-in onscroll-image-fade-in"
+    fgcolor = page.preview.fgcolor
+    modifiers = "onload-content-fade-in onload-image-fade-in"
     image = image_url
     image_alt = page.preview.image_alt
     content = page.excerpt
 %}
 
-{{ content | markdownify }}
+{% capture content %}
+<div class="inner">
+  <div class="index">
+    <section>
+      <div class="content">
+        {{ content | remove_first: page.excerpt | markdownify }}
+      </div>
+    </section>
+  </div>
+</div>
+{% endcapture %}
+
+{% include base/wrapper.html
+  style="boxed"
+  bgcolor=page.preview.bgcolor
+  content=content
+%}

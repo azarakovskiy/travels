@@ -1,0 +1,26 @@
+{% comment %}
+/*
+  This wraps every elements and might incluence it's style.
+
+  it can be of two styles: plain and boxed.
+*/
+{% endcomment %}
+
+{% case include.style %}
+  {% when "plain" %}
+      {% assign styleN = 1 %}
+  {% when "boxed" %}
+      {% assign styleN = 2 %}
+  {% else %}
+      {% assign styleN = 1 %}
+{% endcase %}
+
+{% include base/vars/bgcolor.html %}
+
+{% include base/vars/fgcolor.html %}
+
+<div class="wrapper style{{ styleN }}
+  {{ bgcolor }}
+  {{ fgcolor }}">
+  {{ include.content }}
+</div>

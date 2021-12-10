@@ -21,9 +21,7 @@
       <p><i>{{ post.categories | join: ", " }}</i></p>
       <ul class="actions stacked">
           <li>
-            <a href="{{ post.url | relative_url }}" class="button">
-            {{ post.excerpt_separator | remove: "<!--" | remove: "-->"}}
-            </a>
+            <a href="{{ post.url | relative_url }}" class="button">{{ post.preview.more }}</a>
         </li>
       </ul>
   {% endcapture %}
@@ -43,7 +41,7 @@
       image_alt=post.preview.image_alt
       bgcolor=post.preview.bgcolor
       fgcolor=post.preview.fgcolor
-      extra_modifiers=post.preview.modifiers
+      modifiers=post.preview.modifiers
       content=content
   %}
 
