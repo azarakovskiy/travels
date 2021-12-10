@@ -1,10 +1,16 @@
+{% comment %}
+/*
+  This var translates a conventional image alignment name to what is expected by the template.
+*/
+{% endcomment %}
+
 {% case include.image-align %}
-    {% when "left" %}
-        {% assign image-align = "image-position-left" %}
-    {% when "center" %}
-        {% assign image-align = "image-position-center" %}
-    {% when "right" %}
-        {% assign image-align = "image-position-right" %}
-    {% else %}
-        {% assign image-align = "image-position-left" %}
+  {% when "left" %}
+      {% assign image-align = "image-position-left" %}
+  {% when "center" %}
+      {% assign image-align = "image-position-center" %}
+  {% when "right" %}
+      {% assign image-align = "image-position-right" %}
+  {% else %}
+      {% assign image-align = "image-position-center" %}
 {% endcase %}

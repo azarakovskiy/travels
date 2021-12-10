@@ -1,20 +1,26 @@
+{% comment %}
+/*
+  This var translates a conventional color name to what is expected by the template.
+*/
+{% endcomment %}
+
 {% case include.bgcolor %}
-    {% when "dark_grey" %}
-        {% assign bgcolor = "color1" %}
-    {% when "pink" %}
-        {% assign bgcolor = "color2" %}
-    {% when "purple" %}
-        {% assign bgcolor = "color3" %}
-    {% when "violet" %}
-        {% assign bgcolor = "color4" %}
-    {% when "blue" %}
-        {% assign bgcolor = "color5" %}
-    {% when "cyan" %}
-        {% assign bgcolor = "color6" %}
-    {% when "green" %}
-        {% assign bgcolor = "color7" %}
-    {% when "black" %}
-        {% assign bgcolor = "invert" %}
-    {% else %}
-        {% assign bgcolor = "" %}
+  {% when "dark_grey" %}
+      {% assign bgcolor = "color1" %}
+  {% when "pink" %}
+      {% assign bgcolor = "color2" %}
+  {% when "purple" %}
+      {% assign bgcolor = "color3" %}
+  {% when "violet" %}
+      {% assign bgcolor = "color4" %}
+  {% when "blue" %}
+      {% assign bgcolor = "color5" %}
+  {% when "cyan" %}
+      {% assign bgcolor = "color6" %}
+  {% when "green" %}
+      {% assign bgcolor = "color7" %}
+  {% when "black" %}
+      {% assign bgcolor = "invert" %}
+  {% else %}
+      {% assign bgcolor = "" %}
 {% endcase %}

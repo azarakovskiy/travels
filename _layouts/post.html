@@ -4,7 +4,7 @@ layout: index
 
 {% include base/vars/image-url.html
   folders = page.categories
-  image = page.image
+  image = page.preview.image
 %}
 
 {% include base/banner.html
@@ -12,7 +12,7 @@ layout: index
     bgcolor = page.preview.bgcolor
     modifiers = "onload-image-fade-in onscroll-image-fade-in"
     image = image_url
-    image_alt = page.image_alt
+    image_alt = page.preview.image_alt
     content = page.excerpt
 %}
 

@@ -1,3 +1,9 @@
+{% comment %}
+/*
+  This var translates a conventional content-alignment name to what is expected by the template.
+*/
+{% endcomment %}
+
 {% case include.content-align %}
     {% when "left" %}
         {% assign content-align = "content-align-left" %}

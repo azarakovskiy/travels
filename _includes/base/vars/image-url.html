@@ -1,3 +1,14 @@
+{% comment %}
+/*
+  This var translates a relative path to an image to a full-ish URL that can resolve an image.
+
+  It expects a list of nested `folders` (categories in Jekyll terms, assigned automatically)
+  and `image` which would a relative to `./..` path to an image.
+
+  It results in a variable `image_url` containing an URL.
+*/
+{% endcomment %}
+
 {% assign image_url =
   include.folders |
   join: "/" |

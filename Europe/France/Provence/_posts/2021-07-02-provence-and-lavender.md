@@ -2,15 +2,14 @@
 title: Provence
 layout: post
 
-image: images/provence.jpeg
-image_alt: Provence, France
-
 preview:
-    style: full
-    image-on: left
-    image-align: left
-    content-align: left
-    height: full
+  image: images/provence.jpeg
+  image_alt: Provence, France
+  style: full
+  image-on: left
+  image-align: left
+  content-align: left
+  height: full
 
 excerpt_separator: <!--more-->
 ---

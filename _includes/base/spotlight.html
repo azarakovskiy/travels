@@ -1,3 +1,35 @@
+{% comment %}
+/*
+
+  This is a file that serves the Spotlight component.
+
+  It accepts different styles:
+    *square* | circle | phone | full | full-padding.
+
+  It accepts different heights:
+    *half* | full
+
+  It also accepts other options. Find them in README.
+
+  It is used as:s
+    ```
+    {% include base/spotlight.html
+        style= ...
+        image-on= ...
+        content-align= ...
+        image-align= ...
+        height= ...
+        image= ...
+        image_alt= ...
+        bgcolor= ...
+        extra_modifiers= ...
+        content= ...
+    %}
+    ```
+
+*/
+{% endcomment %}
+
 {% case include.style %}
     {% when "square" %}
         {% assign styleN = 1 %}
@@ -24,20 +56,21 @@
 
 {% include base/vars/bgcolor.html %}
 
+{% include base/vars/fgcolor.html %}
+
 {% include base/vars/content-align.html %}
 
 {% include base/vars/image-align.html %}
 
 {% include base/vars/image-on.html %}
-
-{% include base/vars/modifiers.html %}
-
+ 
 <section class="spotlight style{{ styleN }}
     {{ image-on }}
     {{ content-align }}
     {{ image-align }}
     {{ height }}
     {{ bgcolor }}
+    {{ fgcolor }}
     {{ modifiers }}
     {{ include.extra_modifiers }}">
     <div class="content">

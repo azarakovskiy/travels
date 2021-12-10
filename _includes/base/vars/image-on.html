@@ -1,3 +1,9 @@
+{% comment %}
+/*
+  This var translates a conventional image side placement to what is expected by the template.
+*/
+{% endcomment %}
+
 {% case include.image-on %}
     {% when "left" %}
         {% assign image-on = "orient-right" %}

@@ -1,0 +1,12 @@
+{% comment %}
+/*
+  This var translates a conventional fg color name to what is expected by the template.
+*/
+{% endcomment %}
+
+{% case include.fgcolor %}
+  {% when "white" %}
+      {% assign fgcolor = "invert" %}
+  {% else %}
+      {% assign fgcolor = "" %}
+{% endcase %}

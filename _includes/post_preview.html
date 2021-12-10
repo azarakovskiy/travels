@@ -1,27 +1,45 @@
-{% capture content %}
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.excerpt }}</p>
-<!--    <p>{{ post.tags | join: "," }}</p>-->
-<!--    <p>{{ post.categories | join: ", " }}</p>-->
-    <ul class="actions stacked">
-        <li><a href="{{ post.url | relative_url }}" class="button">More...</a></li>
-    </ul>
-{% endcapture %}
+{% comment %}
+/*
 
-{% include base/vars/image-url.html
-  folders = post.categories
-  image = post.image
-%}
+  This is a file that serves post previews.
 
-{% include base/spotlight.html
-    style=post.preview.style
-    image-on=post.preview.image-on
-    content-align=post.preview.content-align
-    image-align=post.preview.image-align
-    height=post.preview.height
-    image=image_url
-    image_alt=post.image_alt
-    bgcolor=post.preview.bgcolor
-    extra_modifiers=post.preview.modifiers
-    content=content
-%}
+  In defined in a front matter `post.preview`, a preview is rendered.
+
+  It is used as:
+    ```
+      {% include post_preview.html post=post %}
+    ```
+
+*/
+{% endcomment %}
+
+{% if post.preview %}
+
+  {% capture content %}
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.excerpt | markdownify }}</p>
+      <ul class="actions stacked">
+          <li><a href="{{ post.url | relative_url }}" class="button">More...</a></li>
+      </ul>
+  {% endcapture %}
+
+  {% include base/vars/image-url.html
+    folders = post.categories
+    image = post.preview.image
+  %}
+
+  {% include base/spotlight.html
+      style=post.preview.style
+      image-on=post.preview.image-on
+      content-align=post.preview.content-align
+      image-align=post.preview.image-align
+      height=post.preview.height
+      image=image_url
+      image_alt=post.preview.image_alt
+      bgcolor=post.preview.bgcolor
+      fgcolor=post.preview.fgcolor
+      extra_modifiers=post.preview.modifiers
+      content=content
+  %}
+
+{% endif %}
