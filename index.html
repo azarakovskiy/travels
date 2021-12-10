@@ -2,8 +2,6 @@
 layout: index
 ---
 
-{% assign examples = site.posts | where: "example", false %}
-
 {% for post in site.posts %}
   {% if post.preview %}
     {% include post_preview.html post=post %}

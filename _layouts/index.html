@@ -23,12 +23,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="{{ "site.webmanifest" | relative_url }}"">
+    <link rel="manifest" href="{{ "site.webmanifest" | relative_url }}">
 </head>
 <body class="is-preload">
-<div id="wrapper" class="divided">
+  {% if jekyll.environment == "development" %}
+  <div style="height: 21px; width: 100%; position: fixed; top: 0;
+              background-color: red; color: white; z-index: 9999999;
+              text-align: center; font-size: 60%;
+              ">
+    This is a development environment
+  </div>
+  {% endif%}
 
-    {{ content }}
+  <div id="wrapper" class="divided">
+
+  {{ content }}
 
 </div>
 
