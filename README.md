@@ -2,6 +2,25 @@
 
 Soon to be here...
 
+## Built-in functionality
+
+### Image resizing
+
+Resize images found by a given path.
+
+- `big` means 1920x1080 (HD 1080p)
+- `medium` means 1600x900
+- `small` means 1280x720 (HD 720p)
+
+
+```bash
+make image size=big path=file/in/folder.jpg
+make image size=medium path=*ABC.png
+make image size=small path=*.jpg
+```
+
+**IMAGES ARE REPLACED**
+
 ## Elements
 
 Based on [Story template](https://html5up.net/story)
