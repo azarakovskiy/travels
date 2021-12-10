@@ -18,8 +18,13 @@
   {% capture content %}
       <h2>{{ post.title }}</h2>
       <p>{{ post.excerpt | markdownify }}</p>
+      <p><i>{{ post.categories | join: ", " }}</i></p>
       <ul class="actions stacked">
-          <li><a href="{{ post.url | relative_url }}" class="button">More...</a></li>
+          <li>
+            <a href="{{ post.url | relative_url }}" class="button">
+            {{ post.excerpt_separator | remove: "<!--" | remove: "-->"}}
+            </a>
+        </li>
       </ul>
   {% endcapture %}
 
