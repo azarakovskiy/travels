@@ -1,0 +1,11 @@
+{% capture content %}
+<article class="{{ image.slide-from }}">
+  <a href="{{ include.image }}" class="image fit">
+    <img src="{{ include.thumbnail }}" title="{{ include.title }}" alt="{{ include.title }}" />
+  </a>
+</article>
+{% endcapture %}
+
+{% include base/section.html
+  content = content
+%}

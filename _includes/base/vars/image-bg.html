@@ -1,0 +1,11 @@
+{% if include.image %}
+  <style>
+    #{{ include.id }} {
+      background: url({{ "assets/css/images/overlay.png" | relative_url }}), url({{ include.image }});
+      background-size: 256px 256px, cover;
+      background-attachment: fixed, fixed;
+      background-position: top left, bottom center;
+      background-repeat: repeat, no-repeat;
+    }
+  </style>
+{% endif %}

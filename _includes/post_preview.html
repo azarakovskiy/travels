@@ -16,14 +16,13 @@
 {% if post.preview %}
 
   {% capture content %}
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.excerpt | markdownify }}</p>
-      <p><i>{{ post.categories | join: ", " }}</i></p>
-      <ul class="actions stacked">
-          <li>
-            <a href="{{ post.url | relative_url }}" class="button">{{ post.preview.more }}</a>
-        </li>
-      </ul>
+	<header>
+		<h2>{{ post.title }}</h2>
+	</header>
+	<p>{{ post.excerpt | markdownify }}</p>
+	<footer>
+    <a href="{{ post.url | relative_url }}" class="button style1">{{ post.preview.more }}</a>
+	</footer>
   {% endcapture %}
 
   {% include base/vars/image-url.html
@@ -31,18 +30,17 @@
     image = post.preview.image
   %}
 
-  {% include base/spotlight.html
-      style=post.preview.style
-      image-on=post.preview.image-on
-      content-align=post.preview.content-align
-      image-align=post.preview.image-align
-      height=post.preview.height
-      image=image_url
-      image_alt=post.preview.image_alt
-      bgcolor=post.preview.bgcolor
-      fgcolor=post.preview.fgcolor
-      modifiers=post.preview.modifiers
-      content=content
+  {% assign id = post.id | replace: "/", "_" | replace: ".", "_" %}
+
+  {% include base/section.html
+    id        =   id
+    style     =   post.preview.style
+    box       =   post.preview.box
+    align     =   post.preview.align
+    height    =   post.preview.height
+    fgcolor   =   post.preview.fgcolor
+    content   =   content
+    image     =   image_url
   %}
 
 {% endif %}

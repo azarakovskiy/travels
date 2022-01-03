@@ -1,0 +1,59 @@
+{% assign style = "style3 secondary" %}
+{% assign content-style = "" %}
+{% assign fgcolor = "" %}
+{% assign height = "fullscreen" %}
+
+{% case include.fgcolor %}
+  {% when "white" %}
+    {% assign fgcolor = "dark" %}
+{% endcase %}
+
+{% if include.box %}
+  {% assign content-style = "box" %}
+  {% assign fgcolor = "" %}
+{% endif %}
+
+{% case include.style %}
+  {% when "highlight" %}
+    {% assign style = "style1" %}
+    {% include base/vars/image-bg.html
+      id    = include.id
+      image = include.image
+    %}
+
+  {% when "description" %}
+    {% assign style = "style2" %}
+    {% case include.box %}
+      {% when "left" %}
+        {% assign style = style | append: " left" %}
+
+      {% when "right" %}
+        {% assign style = style | append: " right" %}
+    {% endcase %}
+
+    {% include base/vars/image-bg.html
+      id    = include.id
+      image = include.image
+    %}
+
+  {% when "primary" %}
+    {% assign style = "style3 primary"
+
+  {% when "secondary" %}
+    {% assign style = "style3 secondary" %}
+{% endcase %}
+
+{% case include.height %}
+  {% when "full" %}
+    {% assign height = "fullscreen" %}
+  {% when "half" %}
+    {% assign height = "halfscreen" %}
+{% endcase %}
+
+<section id="{{ include.id }}" class="main {{ style }} {{ fgcolor }} {{ height }}">
+  {% if include.content %}
+  <div class="content {{ content-style }}">
+    {{ include.content }}
+  </div>
+  {% endif %}
+</section>

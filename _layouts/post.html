@@ -7,7 +7,7 @@ layout: index
   image = page.preview.image
 %}
 
-{% include base/banner.html
+{% comment %} base/banner.html
     style = page.preview.banner.style
     height = page.preview.banner.height
     bgcolor = page.preview.bgcolor
@@ -16,7 +16,7 @@ layout: index
     image = image_url
     image_alt = page.preview.image_alt
     content = page.excerpt
-%}
+
 
 {% capture content %}
 <div class="inner">
@@ -35,3 +35,4 @@ layout: index
   bgcolor=page.preview.bgcolor
   content=content
 %}
+{% endcomment %}
