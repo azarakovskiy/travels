@@ -81,10 +81,11 @@
 		}
 	}
 
-	body {
-		padding-top: 3em;
-
-		@include breakpoint('<=small') {
-			padding-top: 2.5em;
-		}
-	}
+	// This stuff was in original for the menu.
+	// body {
+	// 	padding-top: 3em;
+	//
+	// 	@include breakpoint('<=small') {
+	// 		padding-top: 2.5em;
+	// 	}
+	// }

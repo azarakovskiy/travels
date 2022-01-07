@@ -1,0 +1,36 @@
+{% capture content %}
+  {% if include.title %}
+    <header>
+      <h2>{{ include.title }}</h2>
+    </header>
+  {% endif%}
+  {% if include.content %}
+    <p>{{ include.content | markdownify }}</p>
+  {% endif %}
+
+  <div class="gallery">
+
+    {% assign images = include.images | split: ";" %}
+    {% for image in images %}
+      {% assign img = image | split: ":" %}
+      {% assign desc = img[1] | strip %}
+      {% assign img = img[0] | strip %}
+
+      {% include base/vars/image-url.html
+        folders = page.categories
+        image = img
+      %}
+      <article class="from-{% cycle "left", "right" %}">
+				<a href="{{ image_url }}" class="image fit">
+					<img src="{{ image_thumb }}" title="{{ desc }}" alt="{{ desc }}" />
+				</a>
+			</article>
+    {% endfor %}
+  </div>
+{% endcapture %}
+
+{% include base/section.html
+  style     =   "primary"
+  fgcolor   =   page.preview.fgcolor
+  content   =   content
+%}

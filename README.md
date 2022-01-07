@@ -29,7 +29,7 @@ https://html5up.net/big-picture
 ```
 preview:
   image: images/example.png
-  style: highlight description primary secondary
+  style: highlight story primary secondary
   box: true left right
   height: full half
   fgcolor: white black

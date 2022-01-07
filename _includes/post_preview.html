@@ -30,13 +30,10 @@
     image = post.preview.image
   %}
 
-  {% assign id = post.id | replace: "/", "_" | replace: ".", "_" %}
-
   {% include base/section.html
-    id        =   id
+    id        =   post.id
     style     =   post.preview.style
     box       =   post.preview.box
-    align     =   post.preview.align
     height    =   post.preview.height
     fgcolor   =   post.preview.fgcolor
     content   =   content

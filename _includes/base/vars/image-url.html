@@ -14,6 +14,18 @@
   join: "/" |
   append: "/" |
   downcase |
+  append: "images/" |
+  append: include.image |
+  relative_url
+%}
+
+{% assign image_thumb =
+  include.folders |
+  join: "/" |
+  append: "/" |
+  downcase |
+  append: "images/" |
+  append: "thumbs/" |
   append: include.image |
   relative_url
 %}

@@ -1,29 +1,31 @@
-{% assign style = "style3 secondary" %}
+{% assign style = include.style %}
+{% assign box = include.box %}
 {% assign content-style = "" %}
-{% assign fgcolor = "" %}
-{% assign height = "fullscreen" %}
+{% assign fgcolor = include.fgcolor %}
+{% assign height = include.height %}
+{% assign id = include.id | replace: "/", "_" | replace: ".", "_" %}
 
-{% case include.fgcolor %}
+{% case fgcolor %}
   {% when "white" %}
     {% assign fgcolor = "dark" %}
 {% endcase %}
 
-{% if include.box %}
+{% if box %}
   {% assign content-style = "box" %}
   {% assign fgcolor = "" %}
 {% endif %}
 
-{% case include.style %}
+{% case style %}
   {% when "highlight" %}
     {% assign style = "style1" %}
     {% include base/vars/image-bg.html
-      id    = include.id
+      id    = id
       image = include.image
     %}
 
-  {% when "description" %}
+  {% when "story" %}
     {% assign style = "style2" %}
-    {% case include.box %}
+    {% case box %}
       {% when "left" %}
         {% assign style = style | append: " left" %}
 
@@ -32,7 +34,7 @@
     {% endcase %}
 
     {% include base/vars/image-bg.html
-      id    = include.id
+      id    = id
       image = include.image
     %}
 
@@ -43,17 +45,17 @@
     {% assign style = "style3 secondary" %}
 {% endcase %}
 
-{% case include.height %}
+{% case height %}
   {% when "full" %}
     {% assign height = "fullscreen" %}
   {% when "half" %}
     {% assign height = "halfscreen" %}
 {% endcase %}
 
-<section id="{{ include.id }}" class="main {{ style }} {{ fgcolor }} {{ height }}">
-  {% if include.content %}
+<section id="{{ id }}" class="main {{ style }} {{ fgcolor }} {{ height }}">
+  {% if include.content  %}
   <div class="content {{ content-style }}">
-    {{ include.content }}
+    {{ include.content  }}
   </div>
   {% endif %}
 </section>

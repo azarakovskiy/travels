@@ -1,0 +1,14 @@
+{% include base/vars/image-url.html
+  folders = page.categories
+  image = include.image
+%}
+
+{% include base/section.html
+  id        =   include.image
+  style     =   "story"
+  box       =   include.side
+  height    =   page.preview.height
+  fgcolor   =   page.preview.fgcolor
+  content   =   include.content
+  image     =   image_url
+%}
