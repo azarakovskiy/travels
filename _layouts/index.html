@@ -10,8 +10,8 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="{{ page.type }}"/>
     <meta property="og:url" content="{{ page.url | absolute_url }}"/>
-    {% if page.excerpt %}
-    <meta property="og:description" content="{{ page.excerpt }}"/>
+    {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}"/>
     {% endif %}
     {% if page.preview.image %}
     {% include base/vars/image-url.html

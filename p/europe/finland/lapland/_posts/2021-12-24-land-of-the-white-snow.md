@@ -1,5 +1,6 @@
 ---
 title: Lapland, 2021
+description: This Christmas we went to a particularly beautiful place. Finland, full of snow and empty of people, has been very successful in escaping the Dutch winter 🌧️🌧️🌧️ [5 mins, ~30 Mb]
 layout: post
 
 preview:
@@ -11,7 +12,7 @@ preview:
 
 ---
 
-This Christmas we went to a particularly beautiful place. Finland, full of snow and empty of people, has been very successful in escaping the Dutch winter 🌧️🌧️🌧️. Rather than heading for a summer destination, we opted for a completely opposite experience with cold weather, deer, huskies, and the Northern Lights.
+This Christmas we went to a particularly beautiful place. Finland, full of snow and empty of people, has been very successful in escaping the Dutch _winter_ 🌧️🌧️🌧️. Rather than heading for a summer destination, we opted for a completely opposite experience with cold weather, deer, huskies, and the Northern Lights.
 
 {% include base/story.html
   image = "DSC03764.jpg"
