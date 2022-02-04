@@ -1,0 +1,11 @@
+---
+layout: index
+---
+
+{% assign examples = site.posts | where: "example", "true" %}
+
+{% for post in examples %}
+  {% if post.preview %}
+    {% include post_preview.html post=post %}
+  {% endif %}
+{% endfor %}

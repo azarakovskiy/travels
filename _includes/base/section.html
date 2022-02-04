@@ -1,0 +1,67 @@
+{% assign style = include.style %}
+{% assign box = include.box %}
+{% assign content-style = "" %}
+{% assign fgcolor = include.fgcolor %}
+{% assign height = include.height %}
+{% assign id = include.id | replace: "/", "_" | replace: ".", "_" %}
+
+{% case fgcolor %}
+  {% when "white" %}
+    {% assign fgcolor = "dark" %}
+{% endcase %}
+
+{% if box %}
+  {% assign content-style = "box" %}
+  {% assign fgcolor = "" %}
+{% endif %}
+
+{% case style %}
+  {% when "highlight" %}
+    {% assign style = "style1" %}
+    {% include base/vars/image-bg.html
+      id    = id
+      image = include.image
+    %}
+
+  {% when "story" %}
+    {% assign style = "style2" %}
+    {% case box %}
+      {% when "left" %}
+        {% assign style = style | append: " left" %}
+
+      {% when "right" %}
+        {% assign style = style | append: " right" %}
+    {% endcase %}
+
+    {% include base/vars/image-bg.html
+      id    = id
+      image = include.image
+    %}
+
+  {% when "primary" %}
+    {% assign style = "style3 primary"
+
+  {% when "secondary" %}
+    {% assign style = "style3 secondary" %}
+{% endcase %}
+
+{% case height %}
+  {% when "full" %}
+    {% assign height = "fullscreen" %}
+  {% when "half" %}
+    {% assign height = "halfscreen" %}
+{% endcase %}
+
+<section id="{{ id }}" class="main {{ style }} {{ fgcolor }} {{ height }}">
+  {% if include.content  %}
+  <div class="content {{ content-style }}">
+    {{ include.content }}
+  </div>
+  {% endif %}
+
+  {% if include.order == "first" %}
+  <span class="button style1 down anchored {{ include.order }}">Scroll down</span>
+  {% elsif include.order != "last" %}
+    <span class="button style2 down anchored {{ include.order }}">Scroll down</span>
+  {% endif %}
+</section>

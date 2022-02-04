@@ -17,27 +17,47 @@
     <meta property="og:image" content="{{ page.image_preview }}"/>
     {% endif %}
 
-    <link rel="stylesheet" href="assets/css/styles.css"/>
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="{{ "assets/css/styles.css" | relative_url }}"/>
+    <noscript><link rel="stylesheet" href="{{ "assets/css/noscript.css" | relative_url }}" /></noscript>
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="{{ "site.webmanifest" | relative_url }}">
 </head>
 <body class="is-preload">
-<div id="wrapper" class="divided">
 
-    {{ content }}
 
+  {{ content }}
+
+<script src="{{ "assets/js/jquery.min.js" | relative_url }}"></script>
+<script src="{{ "assets/js/jquery.poptrox.min.js" | relative_url }}"></script>
+<script src="{{ "assets/js/jquery.scrolly.min.js" | relative_url }}"></script>
+<script src="{{ "assets/js/jquery.scrollex.min.js" | relative_url }}"></script>
+<script src="{{ "assets/js/browser.min.js" | relative_url }}"></script>
+<script src="{{ "assets/js/breakpoints.min.js" | relative_url }}"></script>
+<script src="{{ "assets/js/util.js" | relative_url }}"></script>
+<script src="{{ "assets/js/main.js" | relative_url }}"></script>
+
+{% if jekyll.environment != "development" %}
+<div style="height: 35px; width: 100%; position: fixed; top: 0;
+            background-color: red; color: white; z-index: 9999999;
+            text-align: center; font-size: 60%;
+            ">
+  This is a development environment
 </div>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYG95JW6L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PLYG95JW6L');
+</script>
+{% endif%}
+
+
 </body>
 </html>

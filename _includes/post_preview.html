@@ -1,0 +1,44 @@
+{% comment %}
+/*
+
+  This is a file that serves post previews.
+
+  In defined in a front matter `post.preview`, a preview is rendered.
+
+  It is used as:
+    ```
+      {% include post_preview.html post=post %}
+    ```
+
+*/
+{% endcomment %}
+
+{% if post.preview %}
+
+  {% capture content %}
+	<header>
+		<h2>{{ post.title }}</h2>
+	</header>
+	<p>{{ post.excerpt | markdownify }}</p>
+	<footer>
+    <a href="{{ post.url | relative_url }}" class="button style1">{{ post.preview.more }}</a>
+	</footer>
+  {% endcapture %}
+
+  {% include base/vars/image-url.html
+    folders = post.categories
+    image = post.preview.image
+  %}
+
+  {% include base/section.html
+    id        =   post.id
+    style     =   post.preview.style
+    box       =   post.preview.box
+    height    =   post.preview.height
+    fgcolor   =   post.preview.fgcolor
+    content   =   content
+    image     =   image_url
+    order     =   "last"
+  %}
+
+{% endif %}

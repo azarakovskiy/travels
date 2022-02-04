@@ -1,0 +1,19 @@
+---
+layout: index
+---
+
+
+{% capture first_slide_content %}
+<header>
+  <h2>{{ page.title }}</h2>
+</header>
+<p>{{ page.excerpt | markdownify }}</p>
+{% endcapture %}
+
+{% include base/banner.html
+  image = page.preview.image
+  content = first_slide_content
+  order = "first"
+%}
+
+{{ content | remove_first: page.excerpt | markdownify }}
