@@ -26,14 +26,7 @@
     <link rel="manifest" href="{{ "site.webmanifest" | relative_url }}">
 </head>
 <body class="is-preload">
-  {% if jekyll.environment != "development" %}
-  <div style="height: 35px; width: 100%; position: fixed; top: 0;
-              background-color: red; color: white; z-index: 9999999;
-              text-align: center; font-size: 60%;
-              ">
-    This is a development environment
-  </div>
-  {% endif%}
+
 
   {{ content }}
 
@@ -45,5 +38,26 @@
 <script src="{{ "assets/js/breakpoints.min.js" | relative_url }}"></script>
 <script src="{{ "assets/js/util.js" | relative_url }}"></script>
 <script src="{{ "assets/js/main.js" | relative_url }}"></script>
+
+{% if jekyll.environment != "development" %}
+<div style="height: 35px; width: 100%; position: fixed; top: 0;
+            background-color: red; color: white; z-index: 9999999;
+            text-align: center; font-size: 60%;
+            ">
+  This is a development environment
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYG95JW6L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PLYG95JW6L');
+</script>
+{% endif%}
+
+
 </body>
 </html>
