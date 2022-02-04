@@ -26,18 +26,6 @@
 		text-align: center;
 		text-decoration: none;
 
-		&a {
-			cursor: pointer;
-
-			&:hover {
-				background-color: lighten(_palette(accent1, bg), 5);
-			}
-
-			&:active {
-				background-color: darken(_palette(accent1, bg), 5);
-			}
-		}
-
 		&.down {
 			width: 5em;
 			height: 5em;
@@ -63,17 +51,30 @@
 			}
 		}
 
-		&.anchored {
-			position: absolute;
-			left: 50%;
-		}
-
 		&.style2 {
 			background-color: transparent;
 			border: solid 2px _palette(border);
 			color: inherit;
+		}
 
-			&a {
+		&.anchored {
+			position: absolute;
+			left: 50%;
+		}
+	}
+
+	a.button {
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten(_palette(accent1, bg), 5);
+			}
+
+			&:active {
+				background-color: darken(_palette(accent1, bg), 5);
+			}
+
+			&.style2 {
 				&:hover {
 					background-color: transparentize(_palette(border), 0.75);
 				}
@@ -86,5 +87,4 @@
 					background-image: url('images/arrow.svg');
 				}
 			}
-		}
 	}

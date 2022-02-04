@@ -1,5 +1,6 @@
 ---
 title: Lapland, 2021
+description: This Christmas we went to a particularly beautiful place. Finland, full of snow and empty of people, has been very successful in escaping the Dutch winter 🌧️🌧️🌧️ [5 mins, ~30 Mb]
 layout: post
 
 preview:
@@ -139,7 +140,7 @@ This Christmas we went to a particularly beautiful place. Finland, full of snow 
     DSC03792.jpg: We found a snowman;
     IMG_20211217_144311.jpg: They sell raw sausages for you to make them on an open fire;
     IMG_20211220_120404.jpg: Huskies;
-    IMG_20211220_115303.jpg: A deer 
+    IMG_20211220_115303.jpg: A deer
     "
   title   = "Leftover photos"
   order   = "last"
