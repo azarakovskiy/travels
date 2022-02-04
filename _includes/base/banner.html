@@ -3,12 +3,14 @@
   image = include.image
 %}
 
+{% assign banner_content = include.content | markdownify %}
 {% include base/section.html
   id        =   include.image
   style     =   "story"
   box       =   "center"
   height    =   page.preview.height
   fgcolor   =   page.preview.fgcolor
-  content   =   include.content
+  content   =   banner_content
   image     =   image_url
+  order     =   include.order
 %}

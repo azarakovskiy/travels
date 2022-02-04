@@ -17,7 +17,6 @@
 		border: 0;
 		border-radius: 3.5em;
 		color: _palette(accent1, fg);
-		cursor: pointer;
 		display: inline-block;
 		height: 3.5em;
 		line-height: 3.5em;
@@ -26,6 +25,18 @@
 		position: relative;
 		text-align: center;
 		text-decoration: none;
+
+		&a {
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten(_palette(accent1, bg), 5);
+			}
+
+			&:active {
+				background-color: darken(_palette(accent1, bg), 5);
+			}
+		}
 
 		&.down {
 			width: 5em;
@@ -44,6 +55,11 @@
 				border-radius: 3em 3em 0 0;
 				height: 4.5em;
 				margin-left: -2.5em;
+
+				&.round {
+					border-bottom: solid 2px #e5e6e7;
+					border-radius: 3em;
+				}
 			}
 		}
 
@@ -52,29 +68,23 @@
 			left: 50%;
 		}
 
-		&:hover {
-			background-color: lighten(_palette(accent1, bg), 5);
-		}
-
-		&:active {
-			background-color: darken(_palette(accent1, bg), 5);
-		}
-
 		&.style2 {
 			background-color: transparent;
 			border: solid 2px _palette(border);
 			color: inherit;
 
-			&:hover {
-				background-color: transparentize(_palette(border), 0.75);
-			}
+			&a {
+				&:hover {
+					background-color: transparentize(_palette(border), 0.75);
+				}
 
-			&:active {
-				background-color: transparentize(_palette(border), 0.625);
-			}
+				&:active {
+					background-color: transparentize(_palette(border), 0.625);
+				}
 
-			&.down {
-				background-image: url('images/arrow.svg');
+				&.down {
+					background-image: url('images/arrow.svg');
+				}
 			}
 		}
 	}

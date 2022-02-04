@@ -55,7 +55,13 @@
 <section id="{{ id }}" class="main {{ style }} {{ fgcolor }} {{ height }}">
   {% if include.content  %}
   <div class="content {{ content-style }}">
-    {{ include.content  }}
+    {{ include.content }}
   </div>
+  {% endif %}
+
+  {% if include.order == "first" %}
+  <span class="button style1 down anchored {{ include.order }}">Scroll down</span>
+  {% elsif include.order != "last" %}
+    <span class="button style2 down anchored {{ include.order }}">Scroll down</span>
   {% endif %}
 </section>
