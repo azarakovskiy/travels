@@ -10,11 +10,15 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="{{ page.type }}"/>
     <meta property="og:url" content="{{ page.url | absolute_url }}"/>
-    {% if page.description %}
-    <meta property="og:description" content="{{ page.description }}"/>
+    {% if page.excerpt %}
+    <meta property="og:description" content="{{ page.excerpt }}"/>
     {% endif %}
-    {% if page.image_preview %}
-    <meta property="og:image" content="{{ page.image_preview }}"/>
+    {% if page.preview.image %}
+    {% include base/vars/image-url.html
+      folders = page.categories
+      image = page.preview.image
+    %}
+    <meta property="og:image" content="{{ image_url | absolute_url }}"/>
     {% endif %}
 
     <link rel="stylesheet" href="{{ "assets/css/styles.css" | relative_url }}"/>
