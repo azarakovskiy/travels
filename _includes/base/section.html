@@ -59,9 +59,11 @@
   </div>
   {% endif %}
 
+{% comment %}
   {% if include.order == "first" %}
   <span class="button style1 down anchored {{ include.order }}">Scroll down</span>
   {% elsif include.order != "last" %}
     <span class="button style2 down anchored {{ include.order }}">Scroll down</span>
   {% endif %}
+{% endcomment %}
 </section>
