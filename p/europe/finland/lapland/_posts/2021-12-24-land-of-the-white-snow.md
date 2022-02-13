@@ -106,7 +106,7 @@ This Christmas we went to a particularly beautiful place. Finland, full of snow 
   images = "
     IMG_20211222_133241~2.jpg: A photo taken from the ground;
     IMG_20211222_133218~2.jpg: Beautiful subset. It was freezing cold that day;
-    IMG_20211222_131025~2.jpg: When you can't walk anymore, you begin to crawl;
+    IMG_20211222_131025~2.jpg: Inna, the skies and the sunset;
     IMG_20211222_130956.jpg: Fortunately, at the end you will enjoy some hot tea
     "
   title   = "Or maybe you prefer skiing?"
@@ -135,8 +135,8 @@ This Christmas we went to a particularly beautiful place. Finland, full of snow 
 
 {% include base/gallery.html
   images = "
-    DSC03766.jpg: ;
-    DSC03779.jpg: ;
+    DSC03766.jpg: :);
+    DSC03779.jpg: :);
     DSC03792.jpg: We found a snowman;
     IMG_20211217_144311.jpg: They sell raw sausages for you to make them on an open fire;
     IMG_20211220_120404.jpg: Huskies;
