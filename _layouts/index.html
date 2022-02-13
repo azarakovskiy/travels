@@ -18,7 +18,7 @@
       folders = page.categories
       image = page.preview.image
     %}
-    <meta property="og:image" content="{{ image_url | remove_first: "travels/" | absolute_url }}"/>
+    <meta property="og:image" content="{{ image_url | remove_first: site.baseurl | absolute_url }}"/>
     {% endif %}
 
     <link rel="stylesheet" href="{{ "assets/css/styles.css" | relative_url }}"/>
